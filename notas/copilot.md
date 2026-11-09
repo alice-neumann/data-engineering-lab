@@ -1,0 +1,13 @@
+- @workspace
+  - @workspace /new
+- @vscode
+- @terminal
+- /comandos
+  - @terminal /explain
+  - @vscode /search
+  - @workspace /newNotebook
+- #editor
+- #file 
+- #selection 
+- #terminalLastCommand
+  - #terminalSelection
