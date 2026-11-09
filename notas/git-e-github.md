@@ -1,4 +1,5 @@
 # Git e GitHub
+- Baseado no curso "Git e GitHub do básico ao avançado (c/ gist e GitHub Pages)", de Matheus Battisti (Udemy).
 
 ### Git Fundamental
 
