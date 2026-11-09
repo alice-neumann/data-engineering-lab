@@ -1,16 +1,17 @@
 # SQL
+- Baseado no curso "SQL para Análise de Dados: Do básico ao avançado", de Midori Toyota (Udemy).
 
 ### Funções Agregadas
 
-##### Funções de Agregação
+#### Funções de Agregação
 
-* COUNT ( )
-* SUM ( )
-* MIN ( )
-* MAX ( )
-* AVG ( )
+* Count()
+* Sum()
+* Min()
+* Max()
+* Avg()
 
-##### Group By
+#### Group By
 
 * Normalmente utilizado com funções de agregação, mas não necessariamente
   * ```SQL
@@ -26,7 +27,7 @@
     ORDER BY state, contagem DESC
     ```
 
-##### Having
+#### Having
 
 * Filtra linhas de colunas agrupadas por funções de agregação e também colunas não agrupadas
   * ```SQL
@@ -36,9 +37,9 @@
     HAVING COUNT() > 100 AND state <> 'MG'
     ```
 
-##### Joins
+#### Joins
 
-* Left Join
+* Left Join  
   * ![left-join](../img/sql/left-join.png)
 * Inner Join
   * ![inner-join](../img/sql/inner-join.png)
@@ -47,7 +48,7 @@
 * Full Join
   * ![full-join](../img/sql/full-join.png)
 
-##### Unions
+#### Unions
 
 * Union
 
@@ -59,7 +60,7 @@
     select * from sales.products
     ```
 
-##### Subqueries
+#### Subqueries
 
 * WHERE
 
@@ -128,6 +129,6 @@
     ORDER BY sto.store_name, f.visit_page_date
     ```
 
-##### Tratamento de Dados
+#### Tratamento de Dados
 
-##### Manipulação de Tabelas
+#### Manipulação de Tabelas
