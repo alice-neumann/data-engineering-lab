@@ -1,7 +1,7 @@
 # SQL
 
 - Baseado no curso "SQL para Análise de Dados: Do básico ao avançado", de Midori Toyota (Udemy).
-- Ambiente: PostgreSQL
+- Ambiente: PostgreSQL - pgAdmin 4
 
 ### Funções de Agregação
 
@@ -384,7 +384,7 @@
 
 #### Colunas
 
-##### Inserção
+##### Inserção 
 
 * ```SQL
   -- Insira uma coluna na tabela sales.customers com a idade do cliente
