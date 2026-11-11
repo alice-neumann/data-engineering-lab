@@ -1,7 +1,4 @@
-# SQL
-
-- Baseado no curso "SQL para Análise de Dados: Do básico ao avançado", de Midori Toyota (Udemy).
-- Ambiente: PostgreSQL - pgAdmin 4
+# DQL →  Data Query Language
 
 ### Funções de Agregação
 
@@ -14,13 +11,14 @@
 ### Group By
 
 * Normalmente utilizado com funções de agregação, mas não necessariamente
-  * ```SQL
+   ```SQL
     -- Sem as funções de agregação → funciona como um DISTINCT
     SELECT state FROM sales.customers
-    GROUP BY state
-    ```
+    GROUP BY state  
+    ```  
+
 * Group By +1 coluna:
-  * ```SQL
+   ```SQL
     SELECT state, professional_status, COUNT(*) AS contagem
     FROM sales.customers
     GROUP BY state, professional_status
@@ -30,7 +28,7 @@
 ### Having
 
 * Filtra linhas de colunas agrupadas por funções de agregação e também colunas não agrupadas
-  * ```SQL
+   ```SQL
     SELECT state, COUNT()
     FROM sales.customers
     GROUP BY state
@@ -39,30 +37,31 @@
 
 ### Joins
 
-* Left Join
-  * ![left-join](../img/sql/left-join.png)
-* Inner Join
-  * ![inner-join](../img/sql/inner-join.png)
-* Right Join
-  * ![right-join](../img/sql/right-join.png)
-* Full Join
-  * ![full-join](../img/sql/full-join.png)
+#### Left Join  
+
+   ![left-join](../../img/sql/left-join.png)
+
+#### Inner Join  
+
+   ![inner-join](../../img/sql/inner-join.png)
+
+#### Right Join  
+
+   ![right-join](../../img/sql/right-join.png)
+
+#### Full Join  
+
+   ![full-join](../../img/sql/full-join.png)
 
 ### Unions
 
-* Union
+* Union → Remove linhas duplicadas (+ pesado)
+* Union ALL -> Não remove linhas duplicadas
 
-  * Remove linhas duplicadas (+ pesado)
-* Union ALL
-
-  * Não remove linhas duplicadas
-  * ```SQL
-    select * from sales.products
-    ```
 
 ### Subqueries
 
-* WHERE
+#### WHERE
 
   * A subquerie deve retornar apenas um valor
   * Quando é preciso filtrar registros usando o resultado de outra consulta
@@ -71,7 +70,8 @@
     SELECT * FROM sales.products
     WHERE price = (SELECT MIN(price) FROM sales.products)
     ```
-* WITH
+
+#### WITH
 
   * Organiza uma consulta em etapas nomeadas
   * ```SQL
@@ -79,7 +79,7 @@
     WITH status_e_idade AS (
     SELECT
     	professional_status,
-    	(CURRENT_DATE - birth_date)/365 AS idade
+    	(CURRENT_eDATE - birth_date)/365 AS idade
     FROM sales.customers
     )
     SELECT
@@ -88,7 +88,8 @@
     FROM status_e_idade
     GROUP BY professional_status
     ```
-* FROM
+
+#### FROM
 
   * Aconselhável não utilizar, pois toda subquerie feita com FROM pode ser feita com WITH
   * Cria uma tabela derivada para consultar
@@ -105,7 +106,8 @@
     	 ) as status_e_idade
     GROUP BY professional_status
     ```
-* SELECT
+
+#### SELECT
 
   * A subquerie deve retornar apenas um valor
   * Calcula informações para cada registro
@@ -134,7 +136,6 @@
 #### Conversão de Unidades
 
 * : → converte a expressão para o tipo de dado especificado
-
   * ```SQL
     -- Exemplo 1: conversão de texto em data
     SELECT '2021-10-01'::DATE - '2021-02-01'::DATE
@@ -146,11 +147,11 @@
     -- Exemplo 3: conversão de númerp em texto
     SELECT REPLACE(112122::TEXT,'1','A')
     ```
-* CAST
 
+* CAST
   * ```SQL
     -- Exemplo 1: conversão de texto em data
-    SEECT CAST('2021-10-01' AS DATE) - CAST('2021-02-01' AS DATE)
+    SELECT CAST('2021-10-01' AS DATE) - CAST('2021-02-01' AS DATE)
     ```
 
 #### Tratamento Geral
@@ -173,6 +174,7 @@
     FROM faixa_de_renda
     GROUP BY faixa_renda
     ```
+
 * COALESCE() → Recebe uma lista de valores e retorna o  primeiro que não é NULL
   * ```SQL
     SELECT
@@ -185,19 +187,22 @@
 
 * Lower() → converte todos os caracteres para minúsculas
   * ```SQL
-    SELECT 'São Paulo' = 'SÃO PAULO'
-    SELECT UPPER('São Paulo') = 'SÃO PAULO'
-    ```
-* Upper() → converte todos os caracteres para maiúsculas
-  * ```SQL
     SELECT 'São Paulo' = 'são paulo'
     SELECT LOWER('São Paulo') = 'são paulo'
     ```
+
+* Upper() → converte todos os caracteres para maiúsculas
+  * ```SQL
+    
+    SELECT 'São Paulo' = 'SÃO PAULO'
+    SELECT UPPER('São Paulo') = 'SÃO PAULO'```
+
 * Trim() → remove espaços das pontas
   * ```SQL
     SELECT 'SÃO PAULO     ' = 'SÃO PAULO'
     SELECT TRIM('SÃO PAULO     ') = 'SÃO PAULO'
     ```
+
 * Replace() → troca todas as ocorrências de um trecho por outro
   * ```SQL
     SELECT 'SAO PAULO' = 'SÃO PAULO'
@@ -213,6 +218,7 @@
     SELECT (CURRENT_DATE + interval '10 months')::date
     SELECT CURRENT_DATE + interval '10 hours'
     ```
+
 * Date_trunc → Corta a data para a granularidade escolhida, zerando o resto
   * ```SQL
     SELECT visit_page_date, COUNT(*)
@@ -227,6 +233,7 @@
     GROUP BY visit_page_month
     ORDER BY visit_page_month DESC
     ```
+
 * Extract → Retira uma parte da data como número (não como data)
   * ```SQL
     SELECT
@@ -236,6 +243,7 @@
     GROUP BY dia_da_semana
     ORDER BY dia_da_semana
     ```
+
 * Datediff → Calcula a diferença entre duas datas. **Não existe no PostgreSQL**
   * ```SQL
     SELECT (CURRENT_DATE - '2018-06-01')
@@ -249,7 +257,6 @@
 #### Funções
 
 * Datediff
-
   * ```SQL
     CREATE FUNCTION datediff(unidade varchar, data_inicial date, data_final date)
     RETURNS INTEGER
@@ -269,156 +276,8 @@
 
     SELECT datediff('years', '2021-02-04', CURRENT_DATE)
     ```
-* Deletar a função
 
+* Deletar a função
   * ```SQL
     DROP FUNCTION datediff
     ```
-
-### Manipulação de Tabelas
-
-#### Tabelas
-
-##### Criação
-
-* Criação de tabela a partir de uma query
-  * ```SQL
-    SELECT
-    	customer_id,
-    	datediff('years', birth_date, CURRENT_DATE) idade_cliente
-    	INTO temp_tables.customers_age
-    FROM sales.customers
-
-    SELECT *
-    FROM temp_tables.customers_age
-    ```
-* Criação de tabela a partir do zero
-  * ```SQL
-    SELECT DISTINCT professional_status
-    FROM sales.customers
-
-    CREATE TABLE temp_tables.profissoes (
-    	professional_status varchar,
-    	status_profissional varchar
-    )
-
-    INSERT INTO temp_tables.profissoes
-    (professional_status, status_profissional)
-
-    VALUES
-    ('freelancer', 'freelancer'),
-    ('retired', 'aposentado(a)'),
-    ('clt', 'clt'),
-    ('self_employed', 'autônomo(a)'),
-    ('other', 'outro'),
-    ('businessman', 'empresário(a)'),
-    ('civil_servant', 'funcionário público(a)'),
-    ('student', 'estudante')
-
-    SELECT * FROM temp_tables.profissoes
-    ```
-
-##### Deleção
-
-* ```SQL
-  DROP TABLE temp_tables.profissoes
-  ```
-
-#### Linhas
-
-##### Inserção
-
-* ```SQL
-  -- Insira os status 'desempregado(a)' e 'estagiário(a)' na temp_table.profissoes
-
-  CREATE TABLE temp_tables.profissoes (
-  	professional_status varchar,
-  	status_profissional varchar
-  );
-
-  INSERT INTO temp_tables.profissoes
-  (professional_status, status_profissional)
-
-  VALUES
-  ('freelancer', 'freelancer'),
-  ('retired', 'aposentado(a)'),
-  ('clt', 'clt'),
-  ('self_employed', 'autônomo(a)'),
-  ('other', 'outro'),
-  ('businessman', 'empresário(a)'),
-  ('civil_servant', 'funcionário público(a)'),
-  ('student', 'estudante')
-
-  SELECT * FROM temp_tables.profissoes
-
-  INSERT INTO temp_tables.profissoes
-  (professional_status, status_profissional)
-
-  VALUES
-  ('unemployed', 'desempregado(a)'),
-  ('trainee', 'estagiario(a)')
-  ```
-
-##### Atualização
-
-* ```SQL
-  -- Corrija a tradução de 'estagiário(a)' de 'trainee' para 'intern' 
-  UPDATE temp_tables.profissoes
-  SET professional_status = 'intern'
-  WHERE status_profissional = 'estagiario(a)'
-
-  SELECT * FROM temp_tables.profissoes
-  ```
-
-##### Deleção
-
-* ```SQL
-  -- Delete as linhas dos status 'desempregado(a)' e 'estagiário(a)'
-
-  DELETE FROM temp_tables.profissoes
-  WHERE status_profissional = 'desempregado(a)'
-  OR status_profissional = 'estagiario(a)'
-
-  SELECT * FROM temp_tables.profissoes
-  ```
-
-#### Colunas
-
-##### Inserção 
-
-* ```SQL
-  -- Insira uma coluna na tabela sales.customers com a idade do cliente
-  ALTER TABLE sales.customers
-  ADD customer_age int
-
-  SELECT * FROM sales.customers LIMIT 10
-
-  UPDATE sales.customers
-  SET customer_age = datediff('years', birth_date, CURRENT_DATE)
-  WHERE true
-  ```
-
-##### Atualização
-
-* ```SQL
-  -- Exemplo 1: Alteração do tipo da coluna
-  -- Altere o tipo da coluna customer_age de inteiro para varchar
-  ALTER TABLE sales.customers
-  ALTER COLUMN customer_age TYPE VARCHAR
-
-  SELECT * FROM sales.customers LIMIT 10
-
-  -- Exemplo 2: Alteração do nome da coluna
-  -- Renomeie o nome da coluna "customer_age" para "age"
-  ALTER TABLE sales.customers
-  RENAME COLUMN customer_age TO age
-
-  SELECT * FROM sales.customers LIMIT 10
-  ```
-
-##### Deleção
-
-* ```SQL
-  ALTER TABLE sales.customers
-  DROP COLUMN age
-  ```

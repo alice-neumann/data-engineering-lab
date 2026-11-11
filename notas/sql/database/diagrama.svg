@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="650" viewBox="0 0 1320 650">
+  <defs>
+    <style>
+      .schema { fill: none; stroke: #222; stroke-width: 2; stroke-dasharray: 7 6; }
+      .schema-title { font: 700 21px Arial, sans-serif; fill: #111; }
+      .table { fill: #fff; stroke: #a77bb7; stroke-width: 1.2; }
+      .header { fill: #e6d9eb; stroke: #a77bb7; stroke-width: 1.2; }
+      .table-name { font: italic 14px Arial, sans-serif; fill: #111; text-anchor: middle; }
+      .field { font: italic 13px Arial, sans-serif; fill: #111; }
+      .connector { fill: none; stroke: #333; stroke-width: 1.2; }
+      .key { font: italic 11px Arial, sans-serif; fill: #6b4b79; }
+    </style>
+  </defs>
+
+  <!-- Schema boundaries -->
+  <text class="schema-title" x="20" y="30">sales</text>
+  <rect class="schema" x="18" y="48" width="684" height="575"/>
+  <text class="schema-title" x="760" y="30">temp_tables</text>
+  <rect class="schema" x="755" y="48" width="545" height="575"/>
+
+  <!-- Relationships (drawn behind tables) -->
+  <path class="connector" d="M212 166 H244 V343 H275"/>
+  <path class="connector" d="M208 475 H241 V365 H275"/>
+  <path class="connector" d="M425 343 H453 V191 H480"/>
+  <path class="connector" d="M630 176 H731 V163 H833"/>
+  <path class="connector" d="M630 256 H731 V350 H833"/>
+  <path class="connector" d="M630 279 H711 V371 H833"/>
+
+  <!-- SALES: STORES -->
+  <g>
+    <rect class="table" x="62" y="102" width="150" height="243" rx="11"/>
+    <path class="header" d="M73 102 H201 Q212 102 212 113 V125 H62 V113 Q62 102 73 102 Z"/>
+    <text class="table-name" x="137" y="118">stores</text>
+    <text class="field" x="69" y="145">store_id</text>
+    <text class="field" x="69" y="168">store_cnpj</text>
+    <text class="field" x="69" y="191">store_name</text>
+  </g>
+
+  <!-- SALES: PRODUCTS -->
+  <g>
+    <rect class="table" x="58" y="402" width="150" height="147" rx="11"/>
+    <path class="header" d="M69 402 H197 Q208 402 208 413 V425 H58 V413 Q58 402 69 402 Z"/>
+    <text class="table-name" x="133" y="418">products</text>
+    <text class="field" x="65" y="445">product_id</text>
+    <text class="field" x="65" y="468">brand</text>
+    <text class="field" x="65" y="491">model</text>
+    <text class="field" x="65" y="514">model_year</text>
+    <text class="field" x="65" y="537">price</text>
+  </g>
+
+  <!-- SALES: FUNNEL -->
+  <g>
+    <rect class="table" x="275" y="255" width="150" height="274" rx="11"/>
+    <path class="header" d="M286 255 H414 Q425 255 425 266 V278 H275 V266 Q275 255 286 255 Z"/>
+    <text class="table-name" x="350" y="271">funnel</text>
+    <text class="field" x="282" y="299">visit_id</text>
+    <text class="field" x="282" y="322">customer_id</text>
+    <text class="field" x="282" y="345">store_id</text>
+    <text class="field" x="282" y="368">product_id</text>
+    <text class="field" x="282" y="391">visit_page_date</text>
+    <text class="field" x="282" y="414">add_to_cart_date</text>
+    <text class="field" x="282" y="437">start_checkout_date</text>
+    <text class="field" x="282" y="460">finish_checkout_date</text>
+    <text class="field" x="282" y="483">paid_date</text>
+    <text class="field" x="282" y="506">discount</text>
+  </g>
+
+  <!-- SALES: CUSTOMERS -->
+  <g>
+    <rect class="table" x="480" y="123" width="150" height="315" rx="11"/>
+    <path class="header" d="M491 123 H619 Q630 123 630 134 V146 H480 V134 Q480 123 491 123 Z"/>
+    <text class="table-name" x="555" y="139">customers</text>
+    <text class="field" x="487" y="166">customer_id</text>
+    <text class="field" x="487" y="189">cpf</text>
+    <text class="field" x="487" y="212">first_name</text>
+    <text class="field" x="487" y="235">last_name</text>
+    <text class="field" x="487" y="258">city</text>
+    <text class="field" x="487" y="281">state</text>
+    <text class="field" x="487" y="304">birth_date</text>
+    <text class="field" x="487" y="327">income</text>
+    <text class="field" x="487" y="350">score</text>
+    <text class="field" x="487" y="373">professional_status</text>
+    <text class="field" x="487" y="396">email</text>
+    <text class="field" x="487" y="419">mobile</text>
+  </g>
+
+  <!-- TEMP TABLES: IBGE_GENDERS -->
+  <g>
+    <rect class="table" x="833" y="126" width="150" height="75" rx="11"/>
+    <path class="header" d="M844 126 H972 Q983 126 983 137 V149 H833 V137 Q833 126 844 126 Z"/>
+    <text class="table-name" x="908" y="142">ibge_genders</text>
+    <text class="field" x="840" y="169">first_name</text>
+    <text class="field" x="840" y="192">gender</text>
+  </g>
+
+  <!-- TEMP TABLES: TABELA_1 -->
+  <g>
+    <rect class="table" x="1076" y="126" width="150" height="75" rx="11"/>
+    <path class="header" d="M1087 126 H1215 Q1226 126 1226 137 V149 H1076 V137 Q1076 126 1087 126 Z"/>
+    <text class="table-name" x="1151" y="142">tabela_1</text>
+    <text class="field" x="1083" y="169">cpf</text>
+    <text class="field" x="1083" y="192">name</text>
+  </g>
+
+  <!-- TEMP TABLES: REGIONS -->
+  <g>
+    <rect class="table" x="833" y="310" width="150" height="169" rx="11"/>
+    <path class="header" d="M844 310 H972 Q983 310 983 321 V333 H833 V321 Q833 310 844 310 Z"/>
+    <text class="table-name" x="908" y="326">regions</text>
+    <text class="field" x="840" y="353">city</text>
+    <text class="field" x="840" y="376">state</text>
+    <text class="field" x="840" y="399">region</text>
+    <text class="field" x="840" y="422">size</text>
+    <text class="field" x="840" y="445">code</text>
+    <text class="field" x="840" y="468">population</text>
+  </g>
+
+  <!-- TEMP TABLES: TABELA_2 -->
+  <g>
+    <rect class="table" x="1078" y="251" width="150" height="75" rx="11"/>
+    <path class="header" d="M1089 251 H1217 Q1228 251 1228 262 V274 H1078 V262 Q1078 251 1089 251 Z"/>
+    <text class="table-name" x="1153" y="267">tabela_2</text>
+    <text class="field" x="1085" y="294">cpf</text>
+    <text class="field" x="1085" y="317">state</text>
+  </g>
+
+  <!-- TEMP TABLES: PRODUCTS_2 -->
+  <g>
+    <rect class="table" x="1078" y="374" width="150" height="146" rx="11"/>
+    <path class="header" d="M1089 374 H1217 Q1228 374 1228 385 V397 H1078 V385 Q1078 374 1089 374 Z"/>
+    <text class="table-name" x="1153" y="390">products_2</text>
+    <text class="field" x="1085" y="417">product_id</text>
+    <text class="field" x="1085" y="440">brand</text>
+    <text class="field" x="1085" y="463">model</text>
+    <text class="field" x="1085" y="486">model_year</text>
+    <text class="field" x="1085" y="509">price</text>
+  </g>
+</svg>
