@@ -1,16 +1,17 @@
-
-
 # AI-Driven Data Engineering - notas de estudo
+
 Estudos e prática do bootcamp AI-Driven Data Engineering (AI/R Fellowship): Linux, Git, SQL, Python e ETL.
 
 ## Temas
 
-| Tema             | Onde está                                    |
-| ---------------- | --------------------------------------------- |
-| SQL (PostgreSQL) | [notas/sql](notas/sql/README.md)               |
-| Git e GitHub     | [notas/git-e-github.md](notas/git-e-github.md) |
-| Linux            | [notas/linux.md](notas/linux.md)               |
-| Copilot          | [notas/copilot.md](notas/copilot.md)           |
+| Tema             | Onde está                                      |
+| ---------------- | ----------------------------------------------- |
+| Linux            | [notas/linux.md](notas/linux.md)                 |
+| Git e GitHub     | [notas/git-e-github.md](notas/git-e-github.md)   |
+| Copilot          | [notas/copilot.md](notas/copilot.md)             |
+| SQL (PostgreSQL) | [notas/sql](notas/sql/README.md)                 |
+| Data Literacy    | [notas/data-literacy.md](notas/data-literacy.md) |
+| ChatGPT          | [notas/chatGPT.md](notas/chatGPT.md)             |
 
 ## SQL
 

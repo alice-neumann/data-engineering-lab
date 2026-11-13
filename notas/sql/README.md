@@ -1,4 +1,3 @@
-
 # SQL
 
 * Baseado no curso "SQL para Análise de Dados: Do básico ao avançado", de Midori Toyota (Udemy).
@@ -6,11 +5,11 @@
 
 ## Mapa
 
-| Sigla | Significa                  | Comandos                                      | Arquivo |
-| ----- | -------------------------- | --------------------------------------------- | ------- |
-| DQL   | Data Query Language        | `SELECT`                                    | DQL.md  |
-| DDL   | Data Definition Language   | `CREATE`,`ALTER`,`DROP`                 | DDL.md  |
-| DML   | Data Manipulation Language | `INSERT`,`UPDATE`,`DELETE`,`TRUNCATE` | DML.md  |
+| Sigla | Significa                  | Comandos                                      | Arquivo                      |
+| ----- | -------------------------- | --------------------------------------------- | ---------------------------- |
+| DQL   | Data Query Language        | `SELECT`                                    | [notas/DQL.md](notas/DQL.md)  |
+| DDL   | Data Definition Language   | `CREATE`,`ALTER`,`DROP`                 | [notas/DDL.md](notas/DDL.md)  |
+| DML   | Data Manipulation Language | `INSERT`,`UPDATE`,`DELETE`,`TRUNCATE` | [notas/DML.md](notas/DML.md)  |
 
 ## O que tem em cada arquivo
 
@@ -66,6 +65,7 @@ A lista cobre só o que os exemplos usam. O esquema completo está no `database.
 4. Confira se os dados entraram: `SELECT COUNT(*) FROM sales.funnel;` deve retornar 30580.
 
 ## Estrutura da pasta
+
 ```
 sql/
 ├── README.md
@@ -77,4 +77,3 @@ sql/
     ├── database.sql
     └── diagram.md
 ```
-
