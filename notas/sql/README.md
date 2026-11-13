@@ -7,9 +7,9 @@
 
 | Sigla | Significa                  | Comandos                                      | Arquivo                      |
 | ----- | -------------------------- | --------------------------------------------- | ---------------------------- |
-| DQL   | Data Query Language        | `SELECT`                                    | [notas/DQL.md](notas/DQL.md)  |
-| DDL   | Data Definition Language   | `CREATE`,`ALTER`,`DROP`                 | [notas/DDL.md](notas/DDL.md)  |
-| DML   | Data Manipulation Language | `INSERT`,`UPDATE`,`DELETE`,`TRUNCATE` | [notas/DML.md](notas/DML.md)  |
+| DQL   | Data Query Language        | `SELECT`                                    | [notas/DQL.md](notas/dql.md)  |
+| DDL   | Data Definition Language   | `CREATE`,`ALTER`,`DROP`                 | [notas/DDL.md](notas/ddl.md)  |
+| DML   | Data Manipulation Language | `INSERT`,`UPDATE`,`DELETE`,`TRUNCATE` | [notas/DML.md](notas/sml.md)  |
 
 ## O que tem em cada arquivo
 
