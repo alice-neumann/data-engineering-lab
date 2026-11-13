@@ -9,7 +9,7 @@
 | ----- | -------------------------- | --------------------------------------------- | ---------------------------- |
 | DQL   | Data Query Language        | `SELECT`                                    | [notas/DQL.md](notas/dql.md)  |
 | DDL   | Data Definition Language   | `CREATE`,`ALTER`,`DROP`                 | [notas/DDL.md](notas/ddl.md)  |
-| DML   | Data Manipulation Language | `INSERT`,`UPDATE`,`DELETE`,`TRUNCATE` | [notas/DML.md](notas/sml.md)  |
+| DML   | Data Manipulation Language | `INSERT`,`UPDATE`,`DELETE`,`TRUNCATE` | [notas/DML.md](notas/dml.md)  |
 
 ## O que tem em cada arquivo
 
